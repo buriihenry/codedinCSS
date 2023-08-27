@@ -1,0 +1,168 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Interactive Section */
+.interactive-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-scale {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-scale:hover {
+    transform: scale(1.1);
+}
+
+.slider-rotate {
+    width: 80%;
+    margin-bottom: 20px;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.slider-rotate:hover {
+    transform: rotateZ(180deg);
+}
+
+.toggle-container {
+    position: relative;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    position: absolute;
+    background-color: #ccc;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle:checked + .toggle-label {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Pseudo-Element Section */
+.pseudo-element-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.pseudo-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pseudo-box::before {
+    content: "Before";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pseudo-box::after {
+    content: "After";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+/* 3D Section */
+.three-d-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #f0f0f0;
+}
+
+.card-back {
+    background-color: #007bff;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Visual Feedback */
+.btn-scale:focus, .slider-rotate:focus, .toggle:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007bff;
+}
